@@ -76,7 +76,7 @@ function App() {
             <div className="main-box" ref={navRef}>
                 <section id="services" className={`services ${activeClass === "services" && "active"}`}>
                     <div className="services-img-box">
-                        <img src="https://cdn.pixabay.com/photo/2022/11/24/02/28/clouds-7613361_1280.png" alt="image"/>
+                        <img src="https://cdn.pixabay.com/photo/2022/10/31/12/40/sorrow-7559727__480.jpg" alt="image"/>
                     </div>
                     <article className={`services-param ${activeClass === "services" && "param-active"}`}>
                         <p>
@@ -102,7 +102,7 @@ function App() {
                         </div>
                     </div>
                 </section>
-                <section id="content" className={`content ${activeClass === "content" && "active"}`}>
+                <section id="content" className={`content ${activeClass === "content" && "active content-param"}`}>
                     <div className={`content-box ${activeClass === "content" && "rotate-image"}`}>
                         <img src="https://cdn.pixabay.com/photo/2022/10/31/12/40/sorrow-7559727__480.jpg" alt="img"/>
                     </div>
