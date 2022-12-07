@@ -3,6 +3,7 @@ import "../css/Card.css"
 
 const Card = ({title,content, image}) => {
     const [state, setState] = useState(false)
+
     return (
         <div className="card"
             onClick={() => setState(!state)}>

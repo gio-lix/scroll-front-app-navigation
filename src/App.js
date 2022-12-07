@@ -27,18 +27,13 @@ const carts = [
         image: "https://cdn.pixabay.com/photo/2015/01/07/20/53/hat-591973__480.jpg",
         content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer torambled it to make a type specimen book."
     },
-    {
-        id: 5,
-        title: "mia Andersson",
-        image: "https://cdn.pixabay.com/photo/2018/06/13/20/07/child-3473596__480.jpg",
-        content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took of type and scrambled."
-    },
 ]
 
 function App() {
     const navRef = useRef()
     const [focus, setFocus] = useState("")
     const [activeClass, setActiveClass] = useState("")
+    const [openMenu, setOpenMenu] = useState(false)
 
     const scrollToSection = (element) => {
         [...navRef.current?.children].forEach((ele) => {
@@ -50,21 +45,23 @@ function App() {
             }
         })
     }
+    const option = {
+        threshold: 0.7
+    }
 
     const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
             setFocus(`focus-${entry.target.id}`)
+            console.log("entry.target.id",entry.target.id)
             setActiveClass(entry.target.id)
         }
 
-    }, {
-        threshold: 0.6
-    })
+    }, option)
     useEffect(() => {
         [...navRef.current?.children].forEach(el => {
             observer.observe(el)
         })
-    }, [navRef.current])
+    }, [navRef.current,option])
 
     useEffect(() => {
         window.scrollTo({
@@ -125,7 +122,12 @@ function App() {
                 </section>
             </div>
             <div className="navigation">
-                <nav className="nav">
+                <nav className={`nav ${openMenu && "open-nav"}`}>
+                    <small>
+                        <i onClick={() => setOpenMenu(!openMenu)} className="material-icons">
+                            menu
+                        </i>
+                    </small>
                     <ul className={`${focus}`}>
                         <li onClick={() => scrollToSection("services")} className="link ">Services</li>
                         <li onClick={() => scrollToSection("blog")} className="link ">Blog</li>

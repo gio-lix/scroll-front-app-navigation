@@ -5,7 +5,9 @@ img {
     width: 100%;
     min-height: 320px;
     perspective: 1000px;
+
 }
+
 .card .inner {
     position: relative;
     width: 100%;
@@ -14,6 +16,7 @@ img {
     transition: transform 0.5s;
     transform-style: preserve-3d;
 }
+
 .card .face {
     position: absolute;
     width: 100%;
@@ -40,9 +43,14 @@ img {
     font-size: 18px;
 }
 .face-back {
-    background-color: #e8d7cb;
-    transform: rotateY(180deg);
+    background-color: #eeeefd;
 }
+@media (min-width: 880px) {
+    .face-back {
+        transform: rotateY(180deg);
+    }
+}
+
 
 .ifFlipper {
     transform: rotateY(180deg);
@@ -62,7 +70,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(to bottom left,greenyellow 10%, darkolivegreen 115%);
+    background-image: linear-gradient(to bottom left, #e9ffc8 10%, #f0ffd9 115%);
     z-index: -1;
 }
 .card-header h2 {
@@ -95,20 +103,3 @@ img {
     font-size: 11px;
     line-height: 1.4;
 }
-
-/*..card_body {*/
-/*    padding: 6px;*/
-
-/*> h3 {*/
-/*    color: $gray-800;*/
-/*    font-size: 14px;*/
-/*    font-weight: 600;*/
-/*    margin-bottom: 7px;*/
-/*}*/
-
-/*> p {*/
-/*    color: $gray-800;*/
-/*    font-size: 11px;*/
-/*    line-height: 1.4;*/
-/*}*/
-/*}*/
