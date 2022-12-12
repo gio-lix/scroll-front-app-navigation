@@ -21,7 +21,6 @@
     top: 0;
     left: 0;
     z-index: 100;
-
 }
 
 .navigation nav small {
@@ -65,7 +64,7 @@
     height: 50px;
     z-index: -1;
     border-left: none !important;
-    background: #ffffff !important;
+    /*background: #ffffff !important;*/
 }
 
 
@@ -91,13 +90,15 @@
     transition: transform .4s;
     content: "";
     position: absolute;
-    top: 267px!important;
+    top: 343px;
     /*top: 0;*/
     left: 0;
     width: 300px;
     height: 50px;
     z-index: -1;
     color: white;
+    background-color: white;
+
 }
 
 .focus-service::before {
@@ -125,7 +126,6 @@
         height: 100%;
         width: 300px;
         margin-left: 10px;
-
     }
 
     .navigation nav ul {

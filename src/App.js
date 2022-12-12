@@ -52,7 +52,6 @@ function App() {
     const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
             setFocus(`focus-${entry.target.id}`)
-            console.log("entry.target.id",entry.target.id)
             setActiveClass(entry.target.id)
         }
 
